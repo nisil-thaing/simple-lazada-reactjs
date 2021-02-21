@@ -1,14 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 import { COLORS } from './core/constants/ui-styling.constant';
-import { FONT_BASE, pixelsToRem } from './core/utils/stylesheet-mixins.util';
+import { FONT_BASE } from './core/utils/stylesheet-mixins.util';
 
 export const Container = styled.section`
-  text-align: center;
-
   .main-content-wrapper {
     background-color: ${ COLORS.BACKGROUND_COLOR };
-    padding: ${ pixelsToRem(48) };
   }
 `;
 
@@ -34,6 +31,10 @@ const GlobalStyles = createGlobalStyle`
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+  }
+
+  a {
+    color: ${ COLORS.LINK_COLOR };
   }
 `;
 

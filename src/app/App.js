@@ -3,6 +3,8 @@ import { Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import GlobalStyles, { Container } from './App.style';
 import RouterTree from './core/components/RouterTree';
 import MainHeader from './containers/MainHeader/MainHeader';

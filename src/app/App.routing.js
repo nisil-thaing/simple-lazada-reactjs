@@ -1,9 +1,21 @@
+/* eslint-disable react/display-name */
+import React from 'react';
 import Loadable from 'react-loadable';
+import { Redirect } from 'react-router-dom';
 
 import PageLoading from './core/components/PageLoading';
 
-/* START - Dummy component for testing routing config */
-const AsyncSandwichesPage = Loadable({
+const AsyncHomePage = Loadable({
+    loader: function () {
+      return import(
+      /* webpackChunkName: 'homePage' */ 'app/views/HomePage/HomePage'
+      );
+    },
+    loading: PageLoading,
+    modules: ['HomePage'],
+  }),
+  /* START - Dummy component for testing routing config */
+  AsyncSandwichesPage = Loadable({
     loader: function () {
       return import(
         /* webpackChunkName: 'sandwichesPage' */ 'app/views/DummyPage/SandwichesPage'
@@ -38,14 +50,28 @@ const AsyncSandwichesPage = Loadable({
     },
     loading: PageLoading,
     modules: ['cartPage'],
+  }),
+  /* END - Dummy component for testing routing config */
+  AsyncProductPage = Loadable({
+    loader: function () {
+      return import(
+        /* webpackChunkName: 'productPage' */ 'app/views/ProductPage/ProductPage'
+      );
+    },
+    loading: PageLoading,
+    modules: ['ProductPage'],
   });
-
-/* END - Dummy component for testing routing config */
 
 const routes = [
   {
+    path: '/',
+    component: AsyncHomePage,
+    exact: true
+  },
+  {
     path: '/sandwiches',
     component: AsyncSandwichesPage,
+    exact: true
   },
   {
     path: '/tacos',
@@ -61,6 +87,13 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/products/:id',
+    component: AsyncProductPage
+  }, {
+    path: '*',
+    component: () => <Redirect to='/' />
+  }
 ];
 
 export default routes;
