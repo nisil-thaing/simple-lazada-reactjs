@@ -8,7 +8,6 @@ import { I18nextProvider } from 'react-i18next';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 
-import './index.css';
 import App from 'app/App';
 import * as serviceWorker from './serviceWorker';
 import i18next from 'app/i18n';
@@ -20,19 +19,19 @@ const rootStore = configureAppStore(initialState, history);
 const render = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
 const AppBundle = (
-  <React.StrictMode>
-    <HelmetProvider>
-      <Provider store={ rootStore }>
-        <I18nextProvider i18n={ i18next }>
-          <ConnectedRouter history={ history }>
-            <Router history={ history }>
-              <App />
-            </Router>
-          </ConnectedRouter>
-        </I18nextProvider>
-      </Provider>
-    </HelmetProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <HelmetProvider>
+    <Provider store={ rootStore }>
+      <I18nextProvider i18n={ i18next }>
+        <ConnectedRouter history={ history }>
+          <Router history={ history }>
+            <App />
+          </Router>
+        </ConnectedRouter>
+      </I18nextProvider>
+    </Provider>
+  </HelmetProvider>
+  // </React.StrictMode>
 );
 
 window.onload = function() {
