@@ -1,0 +1,67 @@
+{
+  "name": "simple-lazada-reactjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "start:ssr": "NODE_ENV=production NODE_PATH=./src node server/bootstrap.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "axios": "^0.21.1",
+    "connected-react-router": "^6.8.0",
+    "exenv": "^1.2.2",
+    "express": "^4.17.1",
+    "i18next": "^19.8.7",
+    "i18next-http-middleware": "^3.1.0",
+    "i18next-icu": "^2.0.0",
+    "intl-messageformat": "^9.4.6",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet-async": "^1.0.7",
+    "react-i18next": "^11.8.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-script": "^2.0.5",
+    "react-scripts": "4.0.2",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.12.13",
+    "@storybook/addon-actions": "^6.1.17",
+    "@storybook/addon-links": "^6.1.17",
+    "@storybook/addons": "^6.1.17",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.17",
+    "dotenv": "^8.2.0",
+    "ignore-styles": "^5.0.1",
+    "redux-devtools": "^3.7.0"
+  }
+}
