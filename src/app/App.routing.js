@@ -52,6 +52,15 @@ const AsyncHomePage = Loadable({
     modules: ['cartPage'],
   }),
   /* END - Dummy component for testing routing config */
+  AsyncCategoryPage = Loadable({
+    loader: function () {
+      return import(
+        /* webpackChunkName: 'categoryPage' */ 'app/views/CategoryPage/CategoryPage'
+      );
+    },
+    loading: PageLoading,
+    modules: ['CategoryPage'],
+  }),
   AsyncProductPage = Loadable({
     loader: function () {
       return import(
@@ -88,11 +97,16 @@ const routes = [
     ],
   },
   {
+    path: '/products',
+    component: () => <Redirect to='/' />,
+    exact: true
+  },
+  {
     path: '/products/:id',
     component: AsyncProductPage
   }, {
-    path: '*',
-    component: () => <Redirect to='/' />
+    path: '/:categorySlug',
+    component: AsyncCategoryPage
   }
 ];
 

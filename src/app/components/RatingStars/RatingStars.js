@@ -2,11 +2,13 @@ import React from 'react';
 import { number } from 'prop-types';
 
 import { Container } from './RatingStars.style';
+import { bool } from 'prop-types';
 
 function RatingStars ({
   ratings,
   numOfRaters,
-  maxRatingSystem
+  maxRatingSystem,
+  usingSmallInfo
 }) {
   const ratingStars = [ ...Array(Math.floor(maxRatingSystem)).keys() ];
 
@@ -28,9 +30,11 @@ function RatingStars ({
     </ul>
     <a href="#" className="ml-1 rating-text">
       {
-        numOfRaters !== 1
-          ? `${ numOfRaters } Ratings`
-          : `${ numOfRaters } Rating`
+        usingSmallInfo
+          ? `(${ numOfRaters })`
+          : numOfRaters !== 1
+            ? `${ numOfRaters } Ratings`
+            : `${ numOfRaters } Rating`
       }
     </a>
   </Container>;
@@ -39,12 +43,14 @@ function RatingStars ({
 RatingStars.propTypes = {
   ratings: number.isRequired,
   numOfRaters: number,
-  maxRatingSystem: number
+  maxRatingSystem: number,
+  usingSmallInfo: bool
 };
 
 RatingStars.defaultProps = {
   numOfRaters: 0,
-  maxRatingSystem: 5
+  maxRatingSystem: 5,
+  usingSmallInfo: false
 };
 
 export default RatingStars;
