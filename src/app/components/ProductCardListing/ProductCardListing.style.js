@@ -7,7 +7,7 @@ export const Container = styled.ul`
   list-style: none;
 `;
 
-export const ItemWrapper = styled.li`
+export const ItemWrapper = styled.div`
   &:hover {
     box-shadow: 0 1px 6px rgb(0 0 0 / 30%);
   }
