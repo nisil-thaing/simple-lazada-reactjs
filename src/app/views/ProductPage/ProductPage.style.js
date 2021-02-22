@@ -4,6 +4,12 @@ import { pixelsToRem } from 'app/core/utils/stylesheet-mixins.util';
 import { COLORS } from 'app/core/constants/ui-styling.constant';
 
 export const Container = styled.section`
+  background-color: ${ COLORS.GLOBAL_WHITE };
+
+  ul {
+    list-style: none;
+  }
+
   .mod-product-badge {
     width: ${ pixelsToRem(54) };
   }
@@ -37,11 +43,21 @@ export const Container = styled.section`
     line-height: 100%;
     color: #757575;
 
+    > h6 {
+      font-size: ${ pixelsToRem(14) };
+      line-height: 100%;
+      width: ${ pixelsToRem(90) };
+    }
+
     .tag-name {
       font-size: ${ pixelsToRem(12) };
       line-height: 100%;
       background-color: ${ COLORS.ORANGE };
       color: ${ COLORS.GLOBAL_WHITE };
     }
+  }
+
+  .delivery-info-wrapper {
+    background-color: #fafafa;
   }
 `;
