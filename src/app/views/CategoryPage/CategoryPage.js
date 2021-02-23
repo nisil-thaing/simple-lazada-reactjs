@@ -12,7 +12,7 @@ function CategoryPage ({ data }) {
 
 export default withExtractingMockData(
   CategoryPage,
-  'product-list.json',
+  'category-product-list.json',
   'categorySlug',
   'mainInfo.dataLayer.page.filters[0].filterCheckedValues',
   'mods.listItems'
