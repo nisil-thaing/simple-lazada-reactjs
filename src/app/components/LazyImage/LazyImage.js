@@ -128,10 +128,10 @@ function LazyImage (props) {
   return <Fragment>
     {
       (props.src && !isFirstLoadError)
-        ? [ props.src ].map(() => <LazyImageRenderer
+        ? <LazyImageRenderer
           key={ randHash }
           { ...props }
-          onLoadingFailure={ handleFirstLoadFailure } />)
+          onLoadingFailure={ handleFirstLoadFailure } />
         : <LazyImageRenderer
           key={ randHash }
           { ...props }
