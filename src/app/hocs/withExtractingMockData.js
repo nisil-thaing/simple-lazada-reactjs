@@ -10,7 +10,8 @@ function withExtractingMockData (
   srcUrl,
   routerIdKey = '',
   objectPathToId = '',
-  pathToUsefulData = ''
+  pathToUsefulData = '',
+  isOnlyNeedToContainsKeys = false
 ) {
   return withRouter(function (props) {
     const [ data, setData ] = useState(null);
@@ -24,7 +25,13 @@ function withExtractingMockData (
 
           if (routerIdKey) {
             if (isArray(data) && objectPathToId && params[routerIdKey]) {
-              const findingItem =  data.find(item => getData(item, objectPathToId) === params[routerIdKey]),
+              const findingItem =  data.find(function(item) {
+                  if (isOnlyNeedToContainsKeys) {
+                    return getData(item, objectPathToId).includes(params[routerIdKey]);
+                  }
+
+                  return getData(item, objectPathToId) === params[routerIdKey];
+                }),
                 usefulData = pathToUsefulData
                   ? getData(findingItem, pathToUsefulData)
                   : findingItem;
