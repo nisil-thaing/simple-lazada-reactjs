@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: ${ COLORS.LINK_COLOR };
+
+    &:hover, &:focus, &:active {
+      color: ${ COLORS.LINK_COLOR };
+    }
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { COLORS } from 'app/core/constants/ui-styling.constant';
 
 export const Container = styled.div`
-  background-color: ${ COLORS.BACKGROUND_COLOR };
+  background-color: ${ props => props.backgroundColor || COLORS.BACKGROUND_COLOR };
   width: 100%;
 
   .lazy-image {

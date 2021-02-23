@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './MainFooter.style';
 
 function MainFooter () {
-  return <Container>This is MainFooter</Container>;
+  return <Container className="text-center"><p>@Simple Lazada Site</p></Container>;
 }
 
 export default MainFooter;

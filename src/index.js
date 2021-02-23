@@ -8,6 +8,8 @@ import { I18nextProvider } from 'react-i18next';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from 'app/App';
 import * as serviceWorker from './serviceWorker';
 import i18next from 'app/i18n';

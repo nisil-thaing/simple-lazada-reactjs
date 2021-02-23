@@ -23,6 +23,7 @@ function checkWhetherElementInViewport (element) {
 function LazyImageRenderer ({
   src,
   ratio,
+  backgroundColor,
   onLoadingFailure
 }) {
   const imageRatio = `${ ratio * 100 }%`;
@@ -89,7 +90,9 @@ function LazyImageRenderer ({
     window.removeEventListener('scroll', handleScroll);
   }
 
-  return <Container imageRatio={ imageRatio }>
+  return <Container
+    imageRatio={ imageRatio }
+    backgroundColor={ backgroundColor }>
     <div
       ref={ imageRef }
       className={ classnames('lazy-image', { 'loading': !isImageLoaded }) } />
@@ -140,7 +143,8 @@ function LazyImage (props) {
 LazyImage.propTypes = {
   src: string.isRequired,
   ratio: number.isRequired,
-  name: string
+  name: string,
+  backgroundColor: string
 };
 
 export default LazyImage;

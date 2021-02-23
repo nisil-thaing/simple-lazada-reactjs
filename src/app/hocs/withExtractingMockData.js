@@ -56,7 +56,7 @@ function withExtractingMockData (
       if (srcUrl) {
         fetchData();
       }
-    }, []);
+    }, [ params[routerIdKey] ]);
 
     return <WrapperComponent { ...props } data={ data } />;
   });

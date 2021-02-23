@@ -4,6 +4,8 @@ import Loadable from 'react-loadable';
 import { Redirect } from 'react-router-dom';
 
 import PageLoading from './core/components/PageLoading';
+import MainHeader from './containers/MainHeader/MainHeader';
+import MainFooter from './containers/MainFooter/MainFooter';
 
 const AsyncHomePage = Loadable({
     loader: function () {
@@ -14,44 +16,6 @@ const AsyncHomePage = Loadable({
     loading: PageLoading,
     modules: ['HomePage'],
   }),
-  /* START - Dummy component for testing routing config */
-  AsyncSandwichesPage = Loadable({
-    loader: function () {
-      return import(
-        /* webpackChunkName: 'sandwichesPage' */ 'app/views/DummyPage/SandwichesPage'
-      );
-    },
-    loading: PageLoading,
-    modules: ['sandwichesPage'],
-  }),
-  AsyncTacosPage = Loadable({
-    loader: function () {
-      return import(
-        /* webpackChunkName: 'tacosPage' */ 'app/views/DummyPage/TacosPage'
-      );
-    },
-    loading: PageLoading,
-    modules: ['tacosPage'],
-  }),
-  AsyncBusPage = Loadable({
-    loader: function () {
-      return import(
-        /* webpackChunkName: 'busPage' */ 'app/views/DummyPage/BusPage'
-      );
-    },
-    loading: PageLoading,
-    modules: ['busPage'],
-  }),
-  AsyncCartPage = Loadable({
-    loader: function () {
-      return import(
-        /* webpackChunkName: 'cartPage' */ 'app/views/DummyPage/CartPage'
-      );
-    },
-    loading: PageLoading,
-    modules: ['cartPage'],
-  }),
-  /* END - Dummy component for testing routing config */
   AsyncCategoryPage = Loadable({
     loader: function () {
       return import(
@@ -75,38 +39,27 @@ const routes = [
   {
     path: '/',
     component: AsyncHomePage,
-    exact: true
-  },
-  {
-    path: '/sandwiches',
-    component: AsyncSandwichesPage,
-    exact: true
-  },
-  {
-    path: '/tacos',
-    component: AsyncTacosPage,
-    routes: [
-      {
-        path: '/tacos/bus',
-        component: AsyncBusPage,
-      },
-      {
-        path: '/tacos/cart',
-        component: AsyncCartPage,
-      },
-    ],
+    exact: true,
+    header: MainHeader,
+    footer: MainFooter
   },
   {
     path: '/products',
     component: () => <Redirect to='/' />,
-    exact: true
+    exact: true,
+    header: MainHeader,
+    footer: MainFooter
   },
   {
     path: '/products/:slug',
-    component: AsyncProductPage
+    component: AsyncProductPage,
+    header: MainHeader,
+    footer: MainFooter
   }, {
     path: '/:categorySlug',
-    component: AsyncCategoryPage
+    component: AsyncCategoryPage,
+    header: MainHeader,
+    footer: MainFooter
   }
 ];
 

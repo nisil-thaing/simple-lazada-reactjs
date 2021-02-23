@@ -3,12 +3,8 @@ import { Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import GlobalStyles, { Container } from './App.style';
 import RouterTree from './core/components/RouterTree';
-import MainHeader from './containers/MainHeader/MainHeader';
-import MainFooter from './containers/MainFooter/MainFooter';
 
 import APP_ROUTES from './App.routing';
 
@@ -19,7 +15,6 @@ function App () {
     <Helmet>
       <title>{ t('HELLO_REACT_APP') }</title>
     </Helmet>
-    <MainHeader />
     <section className="main-content-wrapper">
       <Switch>
         {
@@ -28,7 +23,6 @@ function App () {
         }
       </Switch>
     </section>
-    <MainFooter />
     <GlobalStyles />
   </Container>;
 }
