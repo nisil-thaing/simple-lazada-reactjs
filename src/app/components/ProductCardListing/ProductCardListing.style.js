@@ -14,6 +14,7 @@ export const ItemWrapper = styled.div`
 
   .product-label {
     width: ${ pixelsToRem(50) };
+    height: 1rem;
   }
 
   .product-title {

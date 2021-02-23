@@ -12,3 +12,14 @@ export function createRandomHash (length) {
 
   return result;
 }
+
+export function parseProductUrlToSlug (productUrl) {
+  if (!productUrl) {
+    return '';
+  }
+
+  const rawSlug = productUrl.split('/products/')[1],
+    slug = rawSlug?.split('?')[0];
+
+  return slug;
+}

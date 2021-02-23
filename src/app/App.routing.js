@@ -102,7 +102,7 @@ const routes = [
     exact: true
   },
   {
-    path: '/products/:id',
+    path: '/products/:slug',
     component: AsyncProductPage
   }, {
     path: '/:categorySlug',
