@@ -1,0 +1,21 @@
+[{
+  "id": 0,
+  "slug": "dien-thoai-di-dong",
+  "name": "Mobile phones"
+}, {
+  "id": 1,
+  "slug": "may-tinh-bang",
+  "name": "Tablets"
+}, {
+  "id": 2,
+  "slug": "laptop-co-ban",
+  "name": "Traditional laptops"
+}, {
+  "id": 3,
+  "slug": "laptop-giai-tri",
+  "name": "Gaming laptops"
+}, {
+  "id": 4,
+  "slug": "man-hinh-vi-tinh",
+  "name": "Monitors"
+}]
